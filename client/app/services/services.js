@@ -7,14 +7,11 @@ angular.module('shortly.services', [])
       url: '/api/links',
     }).
     then(function(stuff) {
-      //do we have to parse it?
-      console.log('the stuff', stuff.data);
       return stuff.data;
     });
   };
 
   var addOne = function(link) {
-    //do we have to convert the data
     return $http({
       method: 'POST',
       url: '/api/links',
