@@ -10,6 +10,6 @@ angular.module('shortly.links', [])
       console.error(error);
     });
     console.log('scope', $scope.data);
-  }();
+  };
   
 });

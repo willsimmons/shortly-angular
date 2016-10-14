@@ -8,7 +8,8 @@ angular.module('shortly.services', [])
     }).
     then(function(stuff) {
       //do we have to parse it?
-      return (stuff.data);
+      console.log('the stuff', stuff.data);
+      return stuff.data;
     });
   };
 
