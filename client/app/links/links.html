@@ -1,10 +1,12 @@
-<div id='container'>
- <div id='container'>
-  <h1>Links</h1>
-  
-    <p ng-repeat>{{links}}</p>>
-    <!-- figure out how to loop over -->
+<div id='container'>  
+    <li ng-repeat='link in data.links'>
+      <span>
+        <h4>title: {{link.title}}</h4>
+      </span>
+        <p>link url {{link.url}}</p></n>
+        <p>visits {{link.visits}}</p></n>
+        <p>code {link.code}</p></n>
+    </li>
+    </ul>
    <a href="#/shorten"><strong>Shorten a Link</strong></a>
-</div>
-</div>
 </div>
