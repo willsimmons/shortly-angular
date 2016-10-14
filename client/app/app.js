@@ -24,8 +24,8 @@ angular.module('shortly', [
       controller: 'ShortenController'
     })
     .otherwise({
-      templateUrl: 'app/auth/signin.html',
-      controller: 'AuthController'
+      templateUrl: 'app/auth/links.html',
+      controller: 'LinksController'
     });
     // Your code here
 
