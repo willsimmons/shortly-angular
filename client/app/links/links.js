@@ -4,11 +4,12 @@ angular.module('shortly.links', [])
   
   $scope.data = {};
   
-  $scope.loading = function() {
-    $scope.data.links = Links.getAll()
+  $scope.Init = function() {
+    $scope.data = Links.getAll()
     .catch(function(error) {
       console.error(error);
     });
+    console.log('scope', $scope.data);
   }();
   
 });

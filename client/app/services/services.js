@@ -8,17 +8,16 @@ angular.module('shortly.services', [])
     }).
     then(function(stuff) {
       //do we have to parse it?
-      return stuff.data;
+      return (stuff.data);
     });
   };
 
-  var addOne = function() {
+  var addOne = function(link) {
     //do we have to convert the data
-    data = JSON.stringify(link);
-    $http({
+    return $http({
       method: 'POST',
-      url: 'api/links',
-      data: data
+      url: '/api/links',
+      data: link
     });
   };
   
