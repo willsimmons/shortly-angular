@@ -2,19 +2,17 @@ angular.module('shortly.services', [])
 
 .factory('Links', function ($http) {
   var getAll = function() {
-    $http({
+    return $http({
       method: 'GET',
       url: '/api/links',
-      data: links
     }).
-    then(function(data) {
+    then(function(stuff) {
       //do we have to parse it?
-      data = JSON.parse(data);
-      return data;
+      return stuff.data;
     });
   };
 
-  var addOne = function(link) {
+  var addOne = function() {
     //do we have to convert the data
     data = JSON.stringify(link);
     $http({
@@ -23,7 +21,12 @@ angular.module('shortly.services', [])
       data: data
     });
   };
-
+  
+  return {
+    getAll: getAll,
+    addOne: addOne
+  };
+ 
 })
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!
