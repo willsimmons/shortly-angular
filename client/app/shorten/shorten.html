@@ -6,10 +6,16 @@
         <li><a ng-click='signout()'>Sign Out<a></li>
       </ul>
     </nav>
-  <form name="linkForm" ng-submit='addLink()'>
-    <input type='url'ng-model='link.url' placeholder="http://" required>
+  <form name="linkForm" ng-submit='addLink()' novalidate>
+    <input name='link' type='url' ng-model='link.url' placeholder="http://" ng-class="{'error': linkForm.$invalid && linkForm.$dirty}"required>
     <button ng-disabled='linkForm.$invalid'>Shorten Link</button>
   </form>
+  <div ng-if='linkFrom.link.$error.required && linkForm.$dirty' class='message'>
+    <h2> URL Required </h2>
+  </div>
+  <div ng-show='linkFrom.link.$error.url && linkForm.$dirty'>
+    <h2> not a valid URL </h2>
+  </div>
 </div>
 
 
