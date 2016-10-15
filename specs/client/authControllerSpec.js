@@ -3,6 +3,7 @@
 describe('AuthController', function () {
   var $scope, $rootScope, $location, $window, $httpBackend, createController, Auth;
 
+
   // using angular mocks, we can inject the injector
   // to retrieve our dependencies
   beforeEach(module('shortly'));
