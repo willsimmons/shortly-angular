@@ -1,14 +1,19 @@
-<div id='container'>  
-    <li ng-repeat='link in data.links'>
-      <span>
-        <p class='link title'>title: {{link.title}}</p>
-      </span>
-        <p class="link link">{{link.link}}
-        <p class='link original'>{{link.baseUrl}}</p>
-        <p class="link original">link url {{link.url}}</p></n>
-        <p class="link visits count">visits {{link.visits}}</p></n>
-        <p>{{link.code}}</p></n>
+<div id='container'> 
+    <h1>Links</h1>
+    <nav class = 'navigation'>
+      <ul>
+        <li><a href="#/shorten">Shorten</a></li>
+        <li><a ng-click='signout()'>Sign Out</a></li>
+      </ul>
+    </nav>
+  <ul> 
+    <li class='link' ng-repeat='link in data.links'>
+      <span class="title"><p>{{link.title}}</p></span>
+      <img src="assets/redirect_icon.png">
+      <span class="original"><p>{{link.url}}<p></span>
+      <span class="visits"><p>visits</p></span>
+
+      <span><a href='{{link.url}}'>http://localhost:3000/{{link.code}}</p></span>
     </li>
-    </ul>
-   <a href="#/shorten"><strong>Shorten a Link</strong></a>
+  </ul>
 </div>

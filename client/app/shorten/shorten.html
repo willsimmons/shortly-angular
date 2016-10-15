@@ -1,9 +1,14 @@
 <div id='container'>
   <h1>Shorten Link</h1>
+    <nav class = 'navigation'>
+      <ul>
+        <li><a href="#/links">Links</a></li>
+        <li><a ng-click='signout()'>Sign Out<a></li>
+      </ul>
+    </nav>
   <form name="linkForm" ng-submit='addLink()'>
     <input type='url'ng-model='link.url' placeholder="http://" required>
     <button ng-disabled='linkForm.$invalid'>Shorten Link</button>
-    <a href="#/links"><strong>Go To Links</strong></a>
   </form>
 </div>
 
