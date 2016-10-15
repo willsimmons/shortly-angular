@@ -24,7 +24,7 @@ angular.module('shortly', [
       controller: 'ShortenController'
     })
     .otherwise({
-      templateUrl: 'app/auth/links.html',
+      templateUrl: 'app/links/links.html',
       controller: 'LinksController'
     });
     // Your code here
