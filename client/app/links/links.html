@@ -6,13 +6,16 @@
         <li><a ng-click='signout()'>Sign Out</a></li>
       </ul>
     </nav>
+
     <ul> 
-    <li class='link' ng-repeat='link in data.links | orderBy:link.visits'>
+    <li class='link' ng-repeat='link filter:search | orderBy:link.visits'>
       <span class="title"><p>{{link.title}}</p></span>
       <img src="assets/redirect_icon.png">
       <span class="original"><p>{{link.url}}<p></span>
-      <span class='visits count'>{{link.visits}}</span>
-      <span><a href='{{link.url}}'>http://localhost:3000/{{link.code}}</p></span>
+      <div class='visits'>
+        <span class="count">{{link.visits}}</span>
+      </div>
+      <span><a href='http://localhost:3000/api/links{{link.code}}'>{{link.base_url}}</p></span>
     </li>
   </ul>
 </div>
